@@ -4,10 +4,8 @@ const app = express();
 // setup default port
 app.set('port', process.env.port || 3002);
 
-// set default route
-app.get('/', (req,res)=>{
-    res.send("This route works");
-});
+//initialize routes
+app.use('/api',require('./Routes/api'));
 
 // listen to the port
 app.listen(app.get('port'), function(err,response){
