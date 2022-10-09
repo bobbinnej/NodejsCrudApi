@@ -1,8 +1,14 @@
 const express = require('express');
 const app = express();
-
+const mongoose = require('mongoose');
 // setup default port
 app.set('port', process.env.port || 3002);
+
+// connect to mongodb
+var db= mongoose.connect('mongodb://localhost:27017/CrudApi', function(err,response){
+    if(err)console.log("There is an error in connectiong to mongodb");
+           console.log("Connection to mongodb was successful");
+});
 
 //initialize routes
 app.use('/api',require('./Routes/api'));

@@ -9,15 +9,15 @@ router.get('/users',(req,res)=>{
 
 // add a new user to database
 router.post('/users',(req,res)=>{
-
+    res.send("Create a new user works");
 });
 // update users in database
 router.put('/users/:id',(req,res)=>{
-
+    res.send("update  user works");
 });
 // delete user
 router.delete('/users/:id',(req,res)=>{
-
+    res.send("delete user from db works");
 });
 
 
