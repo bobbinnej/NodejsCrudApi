@@ -26,7 +26,12 @@ router.put('/users/:id',(req,res)=>{
 });
 // delete user
 router.delete('/users/:id',(req,res)=>{
-    res.send("delete user from db works");
+    console.log(req.params.id);
+   NewUser.findOneAndDelete({_id:req.params.id}).then(function(newuser){
+    res.send(newuser);
+   }).catch((err)=>{
+    res.status(422).send(err.message);
+   });
 });
 
 
