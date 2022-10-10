@@ -16,6 +16,8 @@ router.post('/users',(req,res)=>{
 
    NewUser.create(req.body).then(function(newuser){
       res.send(newuser);
+   }).catch((err)=>{
+    res.status(422).send(err.message);
    });
 });
 // update users in database
