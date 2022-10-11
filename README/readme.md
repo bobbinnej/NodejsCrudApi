@@ -9,7 +9,7 @@ The entire application is contained within the backend folder.
 - Visual studio code ide
 - Postman -> testing our end points
 - Mongodb -> act as no-sql database to store users
-- Robomong -> provide a visual interface for mongodb
+- Robomongo -> provide a visual interface for mongodb
 
 ## Features
 - Express
@@ -26,30 +26,35 @@ The entire application is contained within the backend folder.
 - npm start
 
 ## Working of the api
-Models present
+Model present
 - newuser.js <br>
 
 
 Api routes
 
--get a list of all users
-GET
+- get a list of all users<br>
+GET<br>
 http://localhost:3002/api/users
 
 
-- add a new user to mongodb
-POST
-http://localhost:3002/api/users
+- add a new user to mongodb<br>
+POST<br>
+http://localhost:3002/api/users<br>
+ Body:<br>
+  {"name":"sarah",
+  "email":"sarahk@gmail.com",
+ "password":"123456"
 
-
-- update existing user in the database
-PUT
+}
+  
+- update existing user in the database<br>
+PUT<br>
 http://localhost:3002/api/users/:id
 
 
 
-- delete a single user from database
-DELETE
+- delete a single user from database<br>
+DELETE<br>
 http://localhost:3002/api/users/:id
 
 
