@@ -7,7 +7,7 @@ var NewUser = require('../models/newuser');
 
 // get all users in the database
 router.get('/users',(req,res)=>{
-    res.send("Get all users works");
+
 });
 
 // add a new user to database
