@@ -7,7 +7,7 @@ var NewUser = require('../models/newuser');
 
 // get all users in the database
 router.get('/users',(req,res)=>{
-
+   res.send(newuser);
 });
 
 // add a new user to database
@@ -20,10 +20,21 @@ router.post('/users',(req,res)=>{
     res.status(422).send(err.message);
    });
 });
+
+
 // update users in database
 router.put('/users/:id',(req,res)=>{
-    res.send("update  user works");
+   console.log(req.body);
+   NewUser.findByIdAndUpdate({_id:req.params.id},req.body).then(function(){
+      NewUser.findOne({_id:req.params.id}).then(function(newuser){
+           res.send(newuser);
+      }).catch((err)=>{
+         res.status(422).status(err.message);
+      });
+   });
 });
+
+
 // delete user
 router.delete('/users/:id',(req,res)=>{
     console.log(req.params.id);
