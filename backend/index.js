@@ -1,15 +1,20 @@
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const config = require('./config/db');
+const mongoose = require('mongoose');
+
+//db connection
+mongoose.Promise=global.Promise;
+mongoose.connect(config.uri, function(err,response){
+    if(err)console.log("Error in trying to connect to mongodb");
+            console.log(config.secret);
+            console.log("Connection to mongodb was successful");
+});
+
+
 // setup default port
 app.set('port', process.env.port || 3002);
-
-// connect to mongodb
-var db= mongoose.connect('mongodb://localhost:27017/RestApi', function(err,response){
-    if(err)console.log("There is an error in connectiong to mongodb");
-           console.log("Connection to mongodb was successful");
-});
 
 app.use(bodyParser.json());
 

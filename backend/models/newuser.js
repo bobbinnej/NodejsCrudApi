@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const bcrypt = require('bcryptjs');
 var newUserSchema = mongoose.Schema({
     name :{
         type:String,
@@ -18,6 +18,9 @@ var newUserSchema = mongoose.Schema({
         trim: true
     }
 });
+
+// encrypt password before saving
+newUserSchema
 
 // export our model
 var newUser = module.exports = mongoose.model('newUser', newUserSchema);
