@@ -9,7 +9,7 @@ mongoose.Promise=global.Promise;
 mongoose.connect(config.uri, function(err,response){
     if(err)console.log("Error in trying to connect to mongodb");
             console.log(config.secret);
-            console.log("Connection to mongodb was successful");
+            console.log("Connection to mongodb was successful for database",config.db);
 });
 
 

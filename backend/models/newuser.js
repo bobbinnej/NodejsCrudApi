@@ -20,7 +20,12 @@ var newUserSchema = mongoose.Schema({
 });
 
 // encrypt password before saving
-newUserSchema
+newUserSchema.pre('save', async function(next){
+    if(!this.isModified('password')){
+        next()
+    }
+    this.password= await bcrypt.hash(this.password, 10);
+});
 
 // export our model
 var newUser = module.exports = mongoose.model('newUser', newUserSchema);
