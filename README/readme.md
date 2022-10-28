@@ -20,9 +20,10 @@ The entire application is contained within the backend folder.
 - node and npm
 
 ## Setup and installation
-- https://github.com/bobbinnej/RestApi.git
+- git clone https://github.com/bobbinnej/RestApi.git
 - cd backend
 - npm init -y
+- npm install
 - npm start
 
 ## Working of the api
@@ -41,9 +42,9 @@ http://localhost:3002/api/users
 POST<br>
 http://localhost:3002/api/users<br>
  Body:<br>
-  {"name":"sarah",
-  "email":"sarahk@gmail.com",
- "password":"123456"
+  {"name":"sarah",<br>
+  "email":"sarahk@gmail.com",<br>
+ "password":"123456"<br>
 
 }
   
